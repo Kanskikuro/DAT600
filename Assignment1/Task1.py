@@ -1,0 +1,4 @@
+from sortingAlgorithms.heapSort import heapSort
+from sortingAlgorithms.quickSort import quickSort
+from sortingAlgorithms.mergeSort import mergeSort
+from sortingAlgorithms.insertionSort import insertionSort
