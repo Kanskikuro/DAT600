@@ -31,7 +31,7 @@ void test_insertion_sort(int len_arr) {
     double time_taken = (double)(end_time - start_time) / CLOCKS_PER_SEC;
 
     // Output the length of the array and the time taken
-    printf("Array length: %d, Time taken: %f seconds\n", len_arr, time_taken);
+    printf("Array length: %d, Time taken: %lf seconds\n", len_arr, time_taken);
 }
 
 int main() {
