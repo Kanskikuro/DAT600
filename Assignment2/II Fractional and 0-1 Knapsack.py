@@ -4,11 +4,11 @@ import random
 # Generate a random knapsack problem
 # -------------------------------
 def generate_problem(num_items=6):
-    # Each item is represented as a tuple: (weight, value)
+    # Item: (weight, value)
     items = []
     for i in range(num_items):
-        weight = random.randint(1, 20)   # Random weight between 1 and 20 kg
-        value = random.randint(10, 100)    # Random price/value between 10 and 100
+        weight = random.randint(1, 20)   # Random weight 
+        value = random.randint(10, 100)    # Random price/value 
         items.append((weight, value))
     capacity = random.randint(20, 100)      # Random maximum capacity for the knapsack
     return items, capacity
@@ -21,12 +21,12 @@ def knapsack_01(items, capacity):
     # DP table where dp[i][w] is the max value for first i items and capacity w.
     dp = [[0 for _ in range(capacity + 1)] for _ in range(n + 1)]
 
-    # Fill the DP table step-by-step.
+    # Fill the DP table
     for i in range(1, n + 1):
         wt, val = items[i-1]
         for w in range(1, capacity + 1):
             if wt > w:
-                dp[i][w] = dp[i-1][w]  # Cannot include item i-1
+                dp[i][w] = dp[i-1][w]  # Cannot include item i-1, because it exceeds the capacity weight
             else:
                 dp[i][w] = max(dp[i-1][w], dp[i-1][w-wt] + val)
     
@@ -94,7 +94,6 @@ def main():
     print("Items chosen (by index):", chosen_items)
     
     # Display DP table
-    print("\nDP Table:")
     for row in dp_table:
         print(row)
     
