@@ -4,7 +4,7 @@ This repository contains the code and resources for assignments related to the D
 ---
 
 ## Assignments  
-The assignments are from DAT600 Algoritmeteori:  
+Assignments are from DAT600 Algoritmeteori:  
 
 - **Assignment 1:**  
   - Implements Insertion, Merge, Heap, and Quick Sort in Python.  
