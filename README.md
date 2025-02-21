@@ -3,11 +3,20 @@ This repository contains the code and resources for assignments related to the D
 
 ---
 
-## Assignments
- # Assignment 1
-   The first assignment of DAT600 implements Insertion, Merge, Heap, and Quick Sort in Python to
-record the step count for different array inputs. Insertion sort was also implemented in Go and C to
-measure and compare the execution time.
+## Assignments  
+Assignments are from DAT600 Algoritmeteori:  
+
+- **Assignment 1:**  
+  - Implements Insertion, Merge, Heap, and Quick Sort in Python.  
+  - Records step count for different array inputs.  
+  - Insertion sort is also implemented in Go and C to compare execution time.  
+
+- **Assignment 2:**  
+  - Implements solutions for:  
+    - Matrix Chain Multiplication  
+    - Fractional and 0-1 Knapsack  
+    - Coin Change problem  
+  - Uses dynamic and greedy algorithms.  
 
 ## Usage
 
