@@ -4,8 +4,10 @@ This repository contains the code and resources for assignments related to the D
 ---
 
 ## Assignments
+The assignemts are from DAT600 Algoritmeteori.
+
  # Assignment 1
-   The first assignment of DAT600 implements Insertion, Merge, Heap, and Quick Sort in Python to
+   The first assignment implements Insertion, Merge, Heap, and Quick Sort in Python to
 record the step count for different array inputs. Insertion sort was also implemented in Go and C to
 measure and compare the execution time.
  # Assignment 2
