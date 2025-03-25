@@ -88,15 +88,10 @@ edges = [
     (2, 6, 6), (4, 5, 8), (5, 7, 7), (6, 5, 9), (1, 7, 8), (3, 5, 4)
 ]
 
+
+# a)
 budget = 30
-budget_c = 25
-
-restricted_node = 3
-max_degree = 3
 mst_cost = kruskal_mst(edges, vertices)
-mst_cost_constraint = kruskal_mst_with_constraint(edges, vertices, restricted_node, max_degree)
-
-swap1, swap2, new_cost = find_valid_swap(edges, vertices, budget_c)
 
 print("Total cost of Minimum Spanning Tree:", mst_cost)
 if mst_cost <= budget:
@@ -105,12 +100,21 @@ else:
     print("No, it's NOT possible to connect all neighborhoods within the budget.")
 print("##############################################")
 
+# b) 
+restricted_node = 3
+max_degree = 3
+mst_cost_constraint = kruskal_mst_with_constraint(edges, vertices, restricted_node, max_degree)
+
 print("Total cost of constrained MST:", mst_cost_constraint)
 if mst_cost_constraint <= budget:
     print("Yes, it's possible to connect all neighborhoods within the budget with the degree constraint.")
 else:
     print("No, it's NOT possible to connect all neighborhoods within the budget with the degree constraint.")
 print("##############################################")
+
+# c)
+budget_c = 25
+swap1, swap2, new_cost = find_valid_swap(edges, vertices, budget_c)
 
 if new_cost <= budget_c:
     print("Valid swap found:", swap1, "<->", swap2)
