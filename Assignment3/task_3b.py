@@ -1,12 +1,12 @@
 from collections import defaultdict
 
-def traverse_graph(graph, node, discovered, output=None):
-    discovered.add(node)
-    for adjacent in graph[node]:
-        if adjacent not in discovered:
-            traverse_graph(graph, adjacent, discovered, output)
+def explore_paths(graph, current, reached, output=None):
+    reached.add(current)
+    for neighbor in graph[current]:
+        if neighbor not in reached:
+            explore_paths(graph, neighbor, reached, output)
     if output is not None:
-        output.append(node)
+        output.append(current)
 
 def generate_reversed(graph):
     inverted = defaultdict(list)
@@ -20,7 +20,7 @@ def capture_order(graph):
     sequence = []
     for vertex in graph:
         if vertex not in visited:
-            traverse_graph(graph, vertex, visited, sequence)
+            explore_paths(graph, vertex, visited, sequence)
     return sequence
 
 def extract_scc(graph):
@@ -34,7 +34,7 @@ def extract_scc(graph):
         current = completion_order.pop()
         if current not in explored:
             cluster = []
-            traverse_graph(transposed, current, explored, cluster)
+            explore_paths(transposed, current, explored, cluster)
             components.append(cluster)
 
     return components
