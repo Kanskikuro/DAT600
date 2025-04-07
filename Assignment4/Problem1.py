@@ -4,15 +4,15 @@ from pulp import LpMaximize, LpProblem, LpVariable
 model = LpProblem(name="manufacturing-optimization", sense=LpMaximize)
 
 # Decision variables
-x = LpVariable(name="X", lowBound=10, cat="Continuous")  # At least 10 units of X
+x = LpVariable(name="X", lowBound=10, cat="Continuous")
 y = LpVariable(name="Y", lowBound=0, cat="Continuous")
 
 # Objective function (profit maximization)
-model += (200*x + 300*y - (85/3)*x - (130/3)*y, "Profit")
+model += (175*x - (20/3)*x + 290*y - (100/3)*y, "Profit")
 
 # Constraints
-model += (15*x + 20*y <= 2400, "Machine_Time_Limit")
-model += (20*x + 30*y <= 2100, "Craftsman_Time_Limit")
+model += (15*x + 20*y <= (40*60), "Machine_Time_Limit")
+model += (20*x + 30*y <= (35*60), "Craftsman_Time_Limit")
 
 # Solve the problem
 model.solve()
